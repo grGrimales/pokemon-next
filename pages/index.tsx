@@ -17,13 +17,7 @@ interface Props {
 const Home: NextPage<Props> = ({ pokemons }) => {
 
   return (
-
-
-
-
     <Layout title='Listado de Pokemons'>
-
-
       <Grid.Container gap={2} justify='flex-start'>
         {pokemons.map((pokemon) => (
           <PokemonCard key={pokemon.id} pokemon={pokemon} />
@@ -31,18 +25,10 @@ const Home: NextPage<Props> = ({ pokemons }) => {
         ))}
       </Grid.Container>
 
-
-
-
-
-
     </Layout>
-
-
 
   )
 }
-
 
 
 
