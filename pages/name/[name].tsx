@@ -30,7 +30,7 @@ const PokemonByNamePage: NextPage<Props> = ({ pokemon }) => {
 
         useEffect(() => {
             setisInFavorite(localFavorites.existInFavorites(pokemon.id));
-        }, [pokemon.id]);
+        }, []);
 
 
         if (isInFavorite) return
