@@ -1,5 +1,5 @@
 
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 
 import { NextPage } from 'next';
 import { GetStaticPaths, GetStaticProps } from 'next';
@@ -22,15 +22,13 @@ interface Props {
 }
 
 const PokemonByNamePage: NextPage<Props> = ({ pokemon }) => {
-    const [isInFavorite, setisInFavorite] = useState(false)
+    const [isInFavorite, setisInFavorite] = useState(localFavorites.existInFavorites(pokemon.id))
 
     const onToggleFavorite = () => {
         localFavorites.toggleFavorite(pokemon.id)
         setisInFavorite(!isInFavorite)
 
-        useEffect(() => {
-            setisInFavorite(localFavorites.existInFavorites(pokemon.id));
-        }, []);
+
 
 
         if (isInFavorite) return
